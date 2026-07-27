@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CallButton } from "./CallButton";
+import { Logo } from "./Logo";
 import { nav } from "@/lib/content";
 
 export function Header() {
@@ -22,11 +23,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link
-          href="#top"
-          className="font-display text-lg font-bold text-primary sm:text-xl"
-        >
-          MedLink Transport
+        <Link href="#top" aria-label="MedLink Transport home">
+          <Logo />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
