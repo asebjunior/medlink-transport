@@ -1,14 +1,17 @@
 type LogoMarkProps = {
   className?: string;
+  /** Set true when adjacent visible text already announces "MedLink Transport". */
+  decorative?: boolean;
 };
 
-export function LogoMark({ className = "" }: LogoMarkProps) {
+export function LogoMark({ className = "", decorative = false }: LogoMarkProps) {
   return (
     <svg
       viewBox="0 0 48 48"
       className={className}
-      role="img"
-      aria-label="MedLink Transport"
+      {...(decorative
+        ? { "aria-hidden": "true" }
+        : { role: "img", "aria-label": "MedLink Transport" })}
     >
       <path
         d="M24 4c8.3 0 15 6.6 15 14.7C39 29.5 24 44 24 44S9 29.5 9 18.7C9 10.6 15.7 4 24 4Z"

@@ -1,5 +1,6 @@
 import { CallButton } from "./CallButton";
-import { VanIllustration } from "./VanIllustration";
+import { LogoMark } from "./Logo";
+import { SeattleSkyline } from "./SeattleSkyline";
 import { business } from "@/lib/content";
 
 export function Hero() {
@@ -7,46 +8,34 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-white"
+      className="relative overflow-hidden bg-background"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_1fr] lg:gap-10 lg:py-28">
-        <div>
-          <h1
-            id="hero-heading"
-            className="text-balance max-w-2xl text-[clamp(2.25rem,4.4vw,3.25rem)] font-bold leading-[1.1] text-foreground"
-          >
-            Getting You to Your Healthcare Appointments—Safely and On Time
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            MedLink Transport LLC provides dependable, compassionate,
-            professional non-emergency medical transportation to individuals
-            who need safe, reliable rides to medical appointments. We serve
-            patients, seniors, individuals with disabilities, healthcare
-            providers, and Medicaid clients throughout King and Snohomish
-            Counties.
-          </p>
+      {/* Seattle skyline at dusk — bold illustrated PNW backdrop, not a stock photo */}
+      <SeattleSkyline className="pointer-events-none absolute inset-x-0 bottom-0 h-72 w-full sm:h-[26rem]" />
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <CallButton />
-            <a
-              href={`mailto:${business.email}`}
-              className="text-lg font-semibold text-primary underline decoration-2 underline-offset-4 hover:text-primary-dark"
-            >
-              {business.email}
-            </a>
-          </div>
-          <p className="mt-3 text-sm text-muted">
-            Contact details shown are placeholders for this preview — update
-            before launch.
-          </p>
+      <div className="relative mx-auto flex max-w-2xl flex-col items-center px-4 pt-20 pb-96 text-center sm:px-6 sm:pt-28 sm:pb-[30rem]">
+        <h1
+          id="hero-heading"
+          className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
+        >
+          <LogoMark decorative className="h-14 w-14 sm:h-16 sm:w-16" />
+          <span className="font-display text-4xl font-bold text-foreground sm:text-5xl">
+            MedLink Transport
+          </span>
+        </h1>
+
+        <p className="mt-6 max-w-lg text-lg font-medium leading-relaxed text-foreground">
+          {business.tagline}
+        </p>
+
+        <div className="mt-10">
+          <CallButton />
         </div>
 
-        <div className="rounded-2xl bg-surface p-6 sm:p-10">
-          <VanIllustration className="mx-auto h-auto w-full max-w-md" />
-          <p className="mt-4 text-center text-sm text-muted">
-            Illustration placeholder — replace with real fleet photography.
-          </p>
-        </div>
+        <p className="mt-4 text-sm font-medium text-foreground">
+          Contact details shown are placeholders for this preview — update
+          before launch.
+        </p>
       </div>
     </section>
   );

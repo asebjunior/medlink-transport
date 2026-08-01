@@ -1,6 +1,8 @@
 // Placeholder business details — replace before launch.
 export const business = {
   name: "MedLink Transport LLC",
+  tagline:
+    "MedLink Transport is a licensed, private transportation provider serving the Greater Seattle area with non-emergency medical, courier, private school, senior mobility, and corporate transportation services.",
   phoneDisplay: "(206) 555-0142",
   phoneHref: "tel:+12065550142",
   email: "info@medlinktransport.com",
@@ -26,26 +28,43 @@ export const business = {
 } as const;
 
 export const nav = [
+  { href: "#top", label: "Home" },
   { href: "#services", label: "Services" },
-  { href: "#medicaid", label: "Medicaid" },
-  { href: "#why-us", label: "Why Choose Us" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#service-area", label: "Service Area" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
 export const services = [
-  "Medical appointments",
-  "Dialysis treatments",
-  "Physical therapy",
-  "Chemotherapy and radiation appointments",
-  "Hospital discharge transportation",
-  "Nursing homes",
-  "Assisted living communities",
-  "Adult family homes",
-  "Rehabilitation centers",
-  "Routine healthcare visits",
-  "Wheelchair-accessible transportation",
+  {
+    id: "nemt",
+    title: "Non-Emergency Medical Transportation",
+    description:
+      "Scheduled rides to dialysis, physical therapy, chemotherapy/radiation, hospital discharge, and routine medical visits. Wheelchair-accessible vehicles, door-to-door assistance, on-time pickups.",
+  },
+  {
+    id: "courier",
+    title: "Medical Courier & Supplies Transportation",
+    description:
+      "Chain-of-custody transport of lab specimens, pharmaceuticals, and medical supplies between labs, clinics, and hospitals. HIPAA-trained drivers, scheduled routes or urgent on-demand runs.",
+  },
+  {
+    id: "school",
+    title: "Private School Run Services",
+    description:
+      "Recurring rides to and from private school, plus after-school activities, tutoring, and camps — outside the public school bus system. Vetted, background-checked drivers on a schedule parents can count on.",
+  },
+  {
+    id: "senior",
+    title: "Senior & Adult Day Program Transport",
+    description:
+      "Companion transportation for elderly clients — adult day programs, social visits, errands, and recurring checkups. Consistent, dignified day-to-day mobility support, not just appointment-based trips.",
+  },
+  {
+    id: "corporate",
+    title: "Corporate & Staff Transport Contracts",
+    description:
+      "Contracted transportation for healthcare and organizational clients — staff, travel RNs, home health aides between assignments, and supplies. A dependable contracted partner, not one-off rides.",
+  },
+  // Disability services transport is a planned future addition — not built out yet.
 ] as const;
 
 export const whyChooseUs = [
